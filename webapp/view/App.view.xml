@@ -4,8 +4,11 @@
    controllerName="ui5.walkthrough.controller.App"
     >
    <Text text="Hello World"/>
-   <Button
+   <!-- <Button
       text="Say Hello"
+      press=".onShowHello"/> -->
+   <Button
+      text="{i18n>showHelloButtonText}"
       press=".onShowHello"/>
 
    <Input
