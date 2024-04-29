@@ -3,22 +3,28 @@
 sap.ui.define(
   [
     //'sap/m/Text',
-    'sap/ui/core/mvc/XMLView',
+    //  'sap/ui/core/mvc/XMLView',
+    'sap/ui/core/ComponentContainer',
   ],
   (
     // Text,
-    XMLView
+    // XMLView,
+    ComponentContainer
   ) => {
     'use strict';
 
     //XMLView
-    XMLView.create({
+    /*   XMLView.create({
       viewName: 'ui5.walkthrough.view.App',
-    }).then((oView) => oView.placeAt('content'));
+    }).then((oView) => oView.placeAt('content')); */
 
-    //Control
-    /* new Text({
-    text: 'Welcome to UI000',
-  }).placeAt('content'); */
+    //ComponentContainer
+    new ComponentContainer({
+      name: 'ui5.walkthrough',
+      settings: {
+        id: 'walkthrough',
+      },
+      async: true,
+    }).placeAt('content');
   }
 );
