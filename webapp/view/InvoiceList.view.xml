@@ -10,7 +10,7 @@
       <items>
          <ObjectListItem
             title="{invoice>Quantity} x {invoice>ProductName}"
-                            number="{
+            number="{
                     parts: [
                         'invoice>ExtendedPrice',
                         'view>/currency'
@@ -20,9 +20,17 @@
                         showMeasure: false
                     }
                 }"
-                numberUnit="{view>/currency}"
-                 numberState="{= ${invoice>ExtendedPrice} > 50 ? 'Error' : 'Success' }"
-                />
+            numberUnit="{view>/currency}"
+            numberState="{= ${invoice>ExtendedPrice} > 50 ? 'Error' : 'Success' }"
+                >
+            <firstStatus>
+               <ObjectStatus
+                  text="{
+                            path: 'invoice>Status',
+                            formatter: '.formatter.statusText'
+                        }"/>
+            </firstStatus>
+         </ObjectListItem>
       </items>
    </List>
 </mvc:View>
